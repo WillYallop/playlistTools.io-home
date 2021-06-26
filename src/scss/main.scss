@@ -1,5 +1,5 @@
-@import 'components/_header';
+@import '_settings', 'components/_header';
 
 body {
-    background-color: rgb(112, 8, 8);
+    background-color: $background;
 }

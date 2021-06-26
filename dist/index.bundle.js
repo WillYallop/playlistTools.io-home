@@ -16,7 +16,7 @@
   \**************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"addHeaderFunction\": () => (/* binding */ addHeaderFunction)\n/* harmony export */ });\nfunction addHeaderFunction() {\n    console.log('Add header resize functionality!');\n}\n\n\n\n//# sourceURL=webpack://playlist-tools-home/./src/js/header.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"addHeaderFunction\": () => (/* binding */ addHeaderFunction)\n/* harmony export */ });\nfunction addHeaderFunction() {\n  console.log('Add header resize functionality!');\n}\n\n\n\n//# sourceURL=webpack://playlist-tools-home/./src/js/header.js?");
 
 /***/ }),
 
@@ -26,7 +26,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \******************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _header__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../header */ \"./src/js/header.js\");\n\n(0,_header__WEBPACK_IMPORTED_MODULE_0__.addHeaderFunction)();\n\nconsole.log('I am the home page!!');\n\n//# sourceURL=webpack://playlist-tools-home/./src/js/home/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _header__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../header */ \"./src/js/header.js\");\n\n(0,_header__WEBPACK_IMPORTED_MODULE_0__.addHeaderFunction)();\nconsole.log('I am the home page!!');\n\n//# sourceURL=webpack://playlist-tools-home/./src/js/home/index.js?");
 
 /***/ })
 
