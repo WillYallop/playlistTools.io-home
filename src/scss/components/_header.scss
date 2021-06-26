@@ -1,3 +1,22 @@
 .headerCon {
-    width: 100%;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    height: 60px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: $shadow;
+    .wrapper {
+        @include wrapper;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        .logoImg {
+            height: 35px;
+            width: 141.72px;
+        }
+    }
 }
