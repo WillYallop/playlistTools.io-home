@@ -1,0 +1,33 @@
+{
+  "name": "playlist-tools-home",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/js/index.js",
+  "scripts": {
+    "build:scss": "node-sass --output-style compressed -o dist/css src/scss",
+    "build:js": "webpack --mode=production",
+    "build:html": "posthtml -c posthtml.json",
+    "build": "rimraf dist/* && run-s build:*",
+    "watch:css": "onchange \"src/scss\" -- npm run build:scss",
+    "watch:js": "onchange \"src/js\" -- webpack --mode=development",
+    "watch:html": "onchange \"src/views\" -- npm run build:html",
+    "serve": "browser-sync start --server dist --files dist",
+    "dev": "rimraf dist/* && npm run build:scss && npm run build:html && webpack --mode=development && run-p serve watch:*"
+  },
+  "author": "William Yallop",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.27.1",
+    "clean-webpack-plugin": "^4.0.0-alpha.0",
+    "copy-webpack-plugin": "^9.0.1",
+    "htmlnano": "^1.0.0",
+    "node-sass": "^6.0.1",
+    "npm-run-all": "^4.1.5",
+    "onchange": "^7.1.0",
+    "posthtml": "^0.16.4",
+    "posthtml-cli": "^0.10.0",
+    "posthtml-modules": "^0.7.4",
+    "webpack": "^5.40.0",
+    "webpack-cli": "^4.7.2"
+  }
+}
