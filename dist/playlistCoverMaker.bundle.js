@@ -20,13 +20,13 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
-/***/ "./src/js/home/index.js":
-/*!******************************!*\
-  !*** ./src/js/home/index.js ***!
-  \******************************/
+/***/ "./src/js/playlist-cover-maker/index.js":
+/*!**********************************************!*\
+  !*** ./src/js/playlist-cover-maker/index.js ***!
+  \**********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _header__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../header */ \"./src/js/header.js\");\n\n(0,_header__WEBPACK_IMPORTED_MODULE_0__.addHeaderFunction)();\n\nconsole.log('I am the home page!!');\n\n//# sourceURL=webpack://playlist-tools-home/./src/js/home/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _header__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../header */ \"./src/js/header.js\");\n\n(0,_header__WEBPACK_IMPORTED_MODULE_0__.addHeaderFunction)();\n\nconsole.log('I am the playlist cover maker page!')\n\n//# sourceURL=webpack://playlist-tools-home/./src/js/playlist-cover-maker/index.js?");
 
 /***/ })
 
@@ -90,7 +90,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _hea
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
-/******/ 	var __webpack_exports__ = __webpack_require__("./src/js/home/index.js");
+/******/ 	var __webpack_exports__ = __webpack_require__("./src/js/playlist-cover-maker/index.js");
 /******/ 	
 /******/ })()
 ;
