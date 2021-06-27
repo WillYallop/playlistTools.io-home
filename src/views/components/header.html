@@ -4,18 +4,29 @@
         <nav class="navCon">
             <a class="navLink" href="/" aria-label="Go to the home page">home</a>
             <a class="navLink" href="/blog" aria-label="Go to the blog page">blog</a>
-            <button id="pt_toolDropDownBtn" class="navLink" aria-expanded="false" aria-label="Open tools navigation dropdown">
-                tools 
-                <img src="./images/icons/chevron-circle-down-solid.svg" alt="Dropdown icon">
+            <button id="pt_toolDropDownBtn" class="navLink toggleBtn" aria-expanded="false" aria-label="Open tools navigation dropdown">
+                <span class="desktopInner">
+                    tools 
+                    <img src="./images/icons/chevron-circle-down-solid.svg" alt="Dropdown icon">
+                </span>
+                <span class="mobileInner">
+                    <img src="./images/icons/bars-solid.svg" alt="Toggle navigation button">
+                </span>
             </button>
             <a class="navSignUpLink" href="#" aria-label="Sign up to PlaylistTools.io!">sign up</a>
+
         </nav>
     </div>
     <!-- Dropdown -->
-    <nav id="pt_toolDropdownRow" class="toolDropdownRow closed">
+    <nav id="pt_toolDropdownRow" class="toolDropdownRow closed" role="navigation">
         <div id="pt_toolDropdownRowWrapper" class="wrapper">
+            <!-- Mobile Links -->
+            <ul class="mobileLinks">
+                <li><a href="/" class="setTabIndex" href="#" tabindex="-1" aria-label="Go to the home page">home <img src="./images/icons/chevron-circle-down-solid.svg" alt="Dropdown icon"></a></li>
+                <li><a href="/blog" class="setTabIndex" href="#" tabindex="-1" aria-label="Go to the blog page">blog <img src="./images/icons/chevron-circle-down-solid.svg" alt="Dropdown icon"></a></li>
+            </ul>
             <!-- Links -->
-            <ul class="dropdownMenu" role="navigation">
+            <ul class="dropdownMenu">
                 <li class="menuItem">
                     <a class="setTabIndex" href="#" aria-label="Reorganise your playlists automatically!"  tabindex="-1">
                         <div class="icon"></div>
@@ -64,6 +75,8 @@
                     <a class="setTabIndex" href="#" aria-label="Sign in to PlaylistTools.io!"  tabindex="-1">sign in</a>
                 </div>
             </div>
+            <!-- Mobile Btn -->
+            <a class="mobileBtnSignUp setTabIndex" href="#" aria-label="Sign up to PlaylistTools.io!" tabindex="-1">sign up</a>
         </div>
     </nav>
 </header>
