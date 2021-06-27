@@ -1,4 +1,9 @@
-import { addHeaderFunction } from '../header';
-addHeaderFunction();
+import { handleNavDropdown, updateDropdownMaxHeight } from '../header';
 
-console.log('I am the home page!!');
+// Add event listener to dropdown
+handleNavDropdown();
+
+// On resize
+window.addEventListener('resize', () => {
+    updateDropdownMaxHeight();
+})

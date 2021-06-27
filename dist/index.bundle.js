@@ -16,7 +16,7 @@
   \**************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"addHeaderFunction\": () => (/* binding */ addHeaderFunction)\n/* harmony export */ });\nfunction addHeaderFunction() {\n  console.log('Add header resize functionality!');\n}\n\n\n\n//# sourceURL=webpack://playlist-tools-home/./src/js/header.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"handleNavDropdown\": () => (/* binding */ handleNavDropdown),\n/* harmony export */   \"updateDropdownMaxHeight\": () => (/* binding */ updateDropdownMaxHeight)\n/* harmony export */ });\nfunction handleNavDropdown() {\n  var btn = document.getElementById('pt_toolDropDownBtn');\n  btn.addEventListener('click', function () {\n    var toolDropdownEle = document.getElementById('pt_toolDropdownRow');\n    var offsetHeight = document.getElementById('pt_toolDropdownRowWrapper').offsetHeight;\n\n    if (toolDropdownEle.classList.contains('closed')) {\n      // Open menu\n      toolDropdownEle.classList.remove('closed');\n      toolDropdownEle.style.maxHeight = \"\".concat(offsetHeight, \"px\");\n      btn.attributes['aria-expanded'].value = true;\n    } else {\n      // Close menu\n      toolDropdownEle.classList.add('closed');\n      toolDropdownEle.style.maxHeight = \"0px\";\n      btn.attributes['aria-expanded'].value = false;\n    }\n  });\n} // If the nav is open and the user resizes\n\n\nfunction updateDropdownMaxHeight() {\n  var toolDropdownEle = document.getElementById('pt_toolDropdownRow');\n  var offsetHeight = document.getElementById('pt_toolDropdownRowWrapper').offsetHeight;\n\n  if (!toolDropdownEle.classList.contains('closed')) {\n    toolDropdownEle.style.maxHeight = \"\".concat(offsetHeight, \"px\");\n  }\n}\n\n\n\n//# sourceURL=webpack://playlist-tools-home/./src/js/header.js?");
 
 /***/ }),
 
@@ -26,7 +26,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \******************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _header__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../header */ \"./src/js/header.js\");\n\n(0,_header__WEBPACK_IMPORTED_MODULE_0__.addHeaderFunction)();\nconsole.log('I am the home page!!');\n\n//# sourceURL=webpack://playlist-tools-home/./src/js/home/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _header__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../header */ \"./src/js/header.js\");\n // Add event listener to dropdown\n\n(0,_header__WEBPACK_IMPORTED_MODULE_0__.handleNavDropdown)(); // On resize\n\nwindow.addEventListener('resize', function () {\n  (0,_header__WEBPACK_IMPORTED_MODULE_0__.updateDropdownMaxHeight)();\n});\n\n//# sourceURL=webpack://playlist-tools-home/./src/js/home/index.js?");
 
 /***/ })
 

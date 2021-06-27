@@ -1,8 +1,14 @@
-$background: #EAEFF5;
+$background: #fff;
+$accent1: #762CF8;
+$accent2: #F78764;
+
+$titleText: #3C3C3C;
+$bodyText: #6F6F6F;
 
 $maxWidth: 1500px;
-$padding: 40px;
+$padding: 20px;
 $shadow: 0px 20px 30px rgba(0, 0, 0, 0.1);
+$animationSpeed: 0.1s;
 
 
 @mixin wrapper {
@@ -10,4 +16,23 @@ $shadow: 0px 20px 30px rgba(0, 0, 0, 0.1);
     margin: 0 auto;
     max-width: $maxWidth;
     padding: 0 $padding;
+}
+
+@mixin title {
+    color: $titleText;
+    font-size: 1em;
+}
+@mixin body {
+    color: $bodyText;
+    font-size: 1em;
+}
+@mixin h2 {
+    color: $titleText;
+    font-size: 2.5em;
+}
+@mixin h3 {
+    
+}
+@mixin h4 {
+    
 }
