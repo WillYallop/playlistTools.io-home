@@ -1,24 +1,23 @@
 <header class="headerCon">
     <div class="wrapper">
-        <img class="logoImg" src="./images/logo(light).png" alt="PlaylistTools.io">
+        <a href="/" aria-label="Go to the home page" class="logoImg"><img class="logoImg" src="./images/logo(light).png" alt="PlaylistTools.io"></a>
         <nav class="navCon">
-            <a class="navLink" href="/">home</a>
-            <a class="navLink" href="/blog">blog</a>
-            <button id="pt_toolDropDownBtn" class="navLink" aria-expanded="false">tools ^</button>
+            <a class="navLink" href="/" aria-label="Go to the home page">home</a>
+            <a class="navLink" href="/blog" aria-label="Go to the blog page">blog</a>
+            <button id="pt_toolDropDownBtn" class="navLink" aria-expanded="false" aria-label="Open tools navigation dropdown">
+                tools 
+                <img src="./images/icons/chevron-circle-down-solid.svg" alt="Dropdown icon">
+            </button>
+            <a class="navSignUpLink" href="#" aria-label="Sign up to PlaylistTools.io!">sign up</a>
         </nav>
     </div>
     <!-- Dropdown -->
-    <nav id="pt_toolDropdownRow" class="toolDropdownRow closed" >
+    <nav id="pt_toolDropdownRow" class="toolDropdownRow closed">
         <div id="pt_toolDropdownRowWrapper" class="wrapper">
-
-            <div class="topRow">
-                popular tools
-            </div>
-
             <!-- Links -->
-            <ul class="dropdownMenu" role="menu">
-                <li class="menuItem" role="menuitem">
-                    <a href="#">
+            <ul class="dropdownMenu" role="navigation">
+                <li class="menuItem">
+                    <a class="setTabIndex" href="#" aria-label="Reorganise your playlists automatically!"  tabindex="-1">
                         <div class="icon"></div>
                         <ul>
                             <li class="title">shuffle playlist</li>
@@ -26,8 +25,8 @@
                         </ul>
                     </a>
                 </li>
-                <li class="menuItem" role="menuitem">
-                    <a href="#">
+                <li class="menuItem">
+                    <a class="setTabIndex" href="#" aria-label="Remove duplicates and unplayable tracks from your playlists."  tabindex="-1">
                         <div class="icon"></div>
                         <ul>
                             <li class="title">remove duplicates</li>
@@ -35,8 +34,8 @@
                         </ul>
                     </a>
                 </li>
-                <li class="menuItem" role="menuitem">
-                    <a href="#">
+                <li class="menuItem">
+                    <a class="setTabIndex" href="#" aria-label="Generate brand new Spotify playlists."  tabindex="-1">
                         <div class="icon"></div>
                         <ul>
                             <li class="title">generate playlist</li>
@@ -44,8 +43,8 @@
                         </ul>  
                     </a>
                 </li>
-                <li class="menuItem" role="menuitem">
-                    <a href="/playlist-cover-maker.html">
+                <li class="menuItem">
+                    <a class="setTabIndex" href="/playlist-cover-maker.html" aria-label="Make unique playlist cover art with our templates!"  tabindex="-1">
                         <div class="icon"></div>
                         <ul>
                             <li class="title">playlist cover maker</li>
@@ -54,9 +53,17 @@
                     </a>
                 </li>
             </ul>
+            <!-- cta -->
+            <div class="ctaRow">
+                <div class="textArea">
+                    <p class="title">Get access to our full suite of tools!</p>
+                    <p class="body">Creating an account and linking your SPotify takes less than a minute. So what are you waiting for. Sign up now!</p>
+                </div>
+                <div class="btnCol" role="navigation">
+                    <a class="setTabIndex" href="#" aria-label="Sign up to PlaylistTools.io!"  tabindex="-1">sign up</a>
+                    <a class="setTabIndex" href="#" aria-label="Sign in to PlaylistTools.io!"  tabindex="-1">sign in</a>
+                </div>
+            </div>
         </div>
-
-
-
     </nav>
 </header>

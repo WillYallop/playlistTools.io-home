@@ -3,7 +3,7 @@
     top: 20px;
     left: 20px;
     right: 20px;
-    min-height: 60px;
+    min-height: 80px;
     background-color: $background;
     border-radius: 20px;
     box-shadow: $shadow;
@@ -11,22 +11,73 @@
     overflow: hidden;
     .wrapper {
         @include wrapper;
-        height: 60px;
+        height: 80px;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding-top: 10px;
-        padding-bottom: 10px;
+        padding-top: 20px;
+        padding-bottom: 20px;
         .logoImg {
             height: 35px;
             width: 141.72px;
+            transition: transform $animationSpeed;
+            &:focus {
+                transform: scale(1.1);
+            }
+            &:hover {
+                transform: scale(1.05);
+            }
         }
         .navCon {
             height: 60px;
             display: flex;
             align-items: center;
             .navLink {
-
+                @include title;
+                margin-right: 40px;
+                text-decoration: none;
+                padding: 10px;
+                background-color: transparent;
+                border: none;
+                position: relative;
+                &:last-child {
+                    margin-right: 0;
+                }
+                &:focus, &:hover {
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        left: 0;
+                        bottom: -4px;
+                        width: 100%;
+                        height: 4px;
+                        background-color: $accent1;
+                        animation: $animationSpeed 1 slideInFromLeft;
+                        border-radius: 10px;
+                        @keyframes slideInFromLeft {
+                            0% {
+                              width: 0px;
+                              opacity: 0;
+                            }
+                            100% {
+                              width: 100%;
+                              opacity: 1;
+                            }
+                          }
+                    }
+                }
+                img {
+                    height: 10px;
+                    margin-left: 5px;
+                    color: red
+                }
+            }
+            .navSignUpLink {
+                @include defaultBtnStyle;
+                background-color: $accent1;
+                &:focus, &:hover {
+                    background-color: $accent1Dark;
+                }
             }
         }
     }
@@ -35,43 +86,42 @@
     .toolDropdownRow {
         background-color: $background;
         transition: max-height $animationSpeed ease-out;
+        // display: block;
         height: auto;
         max-height: 200px;
         &.closed {
+            // display: none;
             max-height: 0;
         }
         .wrapper {
             @include wrapper;
             height: auto;
-            padding-top: 20px;
             padding-bottom: 20px;
             display: flex;
             flex-wrap: wrap;
-            // Top row
-            .topRow {
-                width: 100%;
-                @include title;
-                margin-bottom: 15px;
-            }
             // Menu
             .dropdownMenu {
                 width: 100%;
                 display: grid;
                 gap: 10px;
+                border-top: 1px solid lighten($accent1, 40%);
+                padding-top: 20px;
                 grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
                 margin-bottom: 20px;
                 .menuItem {
                     a {
                         display: flex;
                         text-decoration: none;
-                        padding: 20px;
-                        border-radius: 10px;
+                        padding: $padding;
+                        border-radius: 20px;
                         border: 1px solid lighten($accent1, 40%);
                         &:hover {
                             background-color: lighten($accent1, 40%);
+                            border: 1px solid lighten($accent1, 35%);
                         }
                         &:focus {
                             background-color: lighten($accent1, 40%);
+                            border: 1px solid lighten($accent1, 35%);
                         }
                         .icon {
                             width: 40px;
@@ -91,6 +141,57 @@
                             }
                         }
                     }
+                }
+            }
+            // cta
+            .ctaRow {
+                @include gradientAnimation;
+                width: 100%;
+                padding: $padding;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                border-radius: 20px;
+                .textArea {
+                    .title {
+                        @include title;
+                        color: $titleLight;
+                        font-size: 1.25em;
+                        margin-bottom: 10px;
+                    }
+                    .body {
+                        color: $bodyLight;
+                        font-size: 1em;
+                        max-width: 400px;
+                    }
+                    @media only screen and (max-width: 900px) {
+                        margin-bottom: 20px;
+                    }
+                }
+                .btnCol {
+                    display: flex;
+                    flex-wrap: wrap;
+                    align-items: center;
+                    gap: 10px;
+                    a { 
+                        @include defaultBtnStyle;
+                        display: block;
+                        border: 2px solid #fff;
+                        &:first-child {
+                            margin-right: 10px;
+                        }
+                        &:hover {
+                            background-color: #fff;
+                            color: $titleText;
+                        }
+                        &:focus {
+                            background-color: #fff;
+                            color: $titleText;
+                        }
+                    }
+                }
+                @media only screen and (max-width: 900px) {
+                    flex-direction: column;
                 }
             }
         }

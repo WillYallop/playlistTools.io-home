@@ -1,9 +1,15 @@
 $background: #fff;
 $accent1: #762CF8;
+$accent1Dark: #6826DB;
 $accent2: #F78764;
 
-$titleText: #3C3C3C;
-$bodyText: #6F6F6F;
+$gradient: linear-gradient(270deg, #813ff5, #f49071);
+
+$titleText: #2D1F48;
+$bodyText: #575360;
+
+$titleLight: #fff;
+$bodyLight: rgb(238, 238, 238);
 
 $maxWidth: 1500px;
 $padding: 20px;
@@ -18,9 +24,24 @@ $animationSpeed: 0.1s;
     padding: 0 $padding;
 }
 
+@mixin gradientAnimation {
+    background: $gradient;
+    background-size: 400% 400%;
+    animation: GradientAnimation 30s ease infinite;
+
+    @keyframes GradientAnimation {
+        0%{background-position:0% 50%}
+        50%{background-position:100% 50%}
+        100%{background-position:0% 50%}
+    }
+}
+
 @mixin title {
     color: $titleText;
     font-size: 1em;
+    font-family: 'LatoBold', sans-serif;
+    font-weight: 700;
+    font-style: normal;
 }
 @mixin body {
     color: $bodyText;
@@ -35,4 +56,19 @@ $animationSpeed: 0.1s;
 }
 @mixin h4 {
     
+}
+
+// buttons
+@mixin defaultBtnStyle {
+    cursor: pointer;
+    padding: 10px 40px;
+    border-radius: 40px;
+    border: none;
+    transition: $animationSpeed;
+    font-size: 1em;
+    color: #fff;
+    text-decoration: none;
+    font-family: 'LatoBold', sans-serif;
+    font-weight: 700;
+    font-style: normal;
 }
