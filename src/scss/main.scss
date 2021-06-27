@@ -1,26 +1,10 @@
 @import '_settings', 'components/_header';
 
-@font-face {
-    font-family: 'LatoBold';
-    src: url('/fonts/Lato-Bold.woff2');
-    src: url('/fonts/Lato-Bold.woff2') format('woff2'),
-         url('/fonts/Lato-Bold.woff') format('woff'),
-         url('/fonts/Lato-Bold.ttf') format('truetype')
-}
-@font-face {
-    font-family: 'LatoRegular';
-    src: url('/fonts/Lato-Regular.woff2');
-    src: url('/fonts/Lato-Regular.woff2') format('woff2'),
-         url('/fonts/Lato-Regular.woff') format('woff'),
-         url('/fonts/Lato-Regular.ttf') format('truetype')
-}
-
 body {
     // background-color: $background;
     background-color: rgb(238, 238, 238);
     position: relative;
-    font-family: 'LatoRegular', sans-serif;
-    font-display: swap;
+    font-family: 'Lato', sans-serif;
     min-height: 100%;
 }
 
@@ -35,15 +19,4 @@ body {
 
 ul, menu, ol {
     list-style-type: none;
-}
-
-p {
-    font-family: 'LatoRegular', sans-serif;
-    font-weight: normal;
-    font-style: normal;
-}
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'LatoBold', sans-serif;
-    font-weight: 700;
-    font-style: normal;
 }

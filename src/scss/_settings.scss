@@ -39,9 +39,7 @@ $animationSpeed: 0.1s;
 @mixin title {
     color: $titleText;
     font-size: 1em;
-    font-family: 'LatoBold', sans-serif;
-    font-weight: 700;
-    font-style: normal;
+    font-weight: bold;
 }
 @mixin body {
     color: $bodyText;
@@ -68,8 +66,6 @@ $animationSpeed: 0.1s;
     font-size: 1em;
     color: #fff;
     text-decoration: none;
-    font-family: 'LatoBold', sans-serif;
-    font-weight: 700;
-    font-style: normal;
+    font-weight: bold;
     text-align: center;
 }

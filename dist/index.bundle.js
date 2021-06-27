@@ -1,1 +1,96 @@
-(()=>{"use strict";var e;(e=document.getElementById("pt_toolDropDownBtn")).addEventListener("click",(function(){var t=document.getElementById("pt_toolDropdownRow"),o=document.getElementById("pt_toolDropdownRowWrapper").offsetHeight;if(t.classList.contains("closed")){t.classList.remove("closed"),t.style.maxHeight="".concat(o,"px"),e.attributes["aria-expanded"].value=!0;var a=document.getElementsByClassName("setTabIndex");if(null!=a)for(var n=0;n<a.length;n++)a[n].attributes.tabindex.value="0"}else{t.classList.add("closed"),t.style.maxHeight="0px",e.attributes["aria-expanded"].value=!1;var s=document.getElementsByClassName("setTabIndex");if(null!=s)for(var l=0;l<s.length;l++)s[l].attributes.tabindex.value="-1"}})),window.addEventListener("resize",(function(){var e,t;e=document.getElementById("pt_toolDropdownRow"),t=document.getElementById("pt_toolDropdownRowWrapper").offsetHeight,e.classList.contains("closed")||(e.style.maxHeight="".concat(t,"px"))}))})();
+/*
+ * ATTENTION: The "eval" devtool has been used (maybe by default in mode: "development").
+ * This devtool is neither made for production nor for readable output files.
+ * It uses "eval()" calls to create a separate source file in the browser devtools.
+ * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
+ * or disable the default devtool with "devtool: false".
+ * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
+ */
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+/******/ 	var __webpack_modules__ = ({
+
+/***/ "./src/js/header.js":
+/*!**************************!*\
+  !*** ./src/js/header.js ***!
+  \**************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"handleNavDropdown\": () => (/* binding */ handleNavDropdown),\n/* harmony export */   \"updateDropdownMaxHeight\": () => (/* binding */ updateDropdownMaxHeight)\n/* harmony export */ });\nfunction handleNavDropdown() {\n  var btn = document.getElementById('pt_toolDropDownBtn');\n  btn.addEventListener('click', () => {\n    var toolDropdownEle = document.getElementById('pt_toolDropdownRow');\n    var offsetHeight = document.getElementById('pt_toolDropdownRowWrapper').offsetHeight;\n\n    if (toolDropdownEle.classList.contains('closed')) {\n      // Open menu\n      toolDropdownEle.classList.remove('closed');\n      toolDropdownEle.style.maxHeight = `${offsetHeight}px`;\n      btn.attributes['aria-expanded'].value = true; // Loop over links and update tabindex\n\n      let linkElement = document.getElementsByClassName('setTabIndex');\n\n      if (linkElement != undefined) {\n        for (let i = 0; i < linkElement.length; i++) {\n          linkElement[i].attributes['tabindex'].value = '0';\n        }\n      }\n    } else {\n      // Close menu\n      toolDropdownEle.classList.add('closed');\n      toolDropdownEle.style.maxHeight = `0px`;\n      btn.attributes['aria-expanded'].value = false; // Loop over links and update tabindex\n\n      let linkElement = document.getElementsByClassName('setTabIndex');\n\n      if (linkElement != undefined) {\n        for (let i = 0; i < linkElement.length; i++) {\n          linkElement[i].attributes['tabindex'].value = '-1';\n        }\n      }\n    }\n  });\n} // If the nav is open and the user resizes\n\n\nfunction updateDropdownMaxHeight() {\n  var toolDropdownEle = document.getElementById('pt_toolDropdownRow');\n  var offsetHeight = document.getElementById('pt_toolDropdownRowWrapper').offsetHeight;\n\n  if (!toolDropdownEle.classList.contains('closed')) {\n    toolDropdownEle.style.maxHeight = `${offsetHeight}px`;\n  }\n}\n\n\n\n//# sourceURL=webpack://playlist-tools-home/./src/js/header.js?");
+
+/***/ }),
+
+/***/ "./src/js/home/index.js":
+/*!******************************!*\
+  !*** ./src/js/home/index.js ***!
+  \******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _header__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../header */ \"./src/js/header.js\");\n // Add event listener to dropdown\n\n(0,_header__WEBPACK_IMPORTED_MODULE_0__.handleNavDropdown)(); // On resize\n\nwindow.addEventListener('resize', () => {\n  (0,_header__WEBPACK_IMPORTED_MODULE_0__.updateDropdownMaxHeight)();\n});\n\n//# sourceURL=webpack://playlist-tools-home/./src/js/home/index.js?");
+
+/***/ })
+
+/******/ 	});
+/************************************************************************/
+/******/ 	// The module cache
+/******/ 	var __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 			// no module.id needed
+/******/ 			// no module.loaded needed
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	(() => {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = (exports) => {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/************************************************************************/
+/******/ 	
+/******/ 	// startup
+/******/ 	// Load entry module and return exports
+/******/ 	// This entry module can't be inlined because the eval devtool is used.
+/******/ 	var __webpack_exports__ = __webpack_require__("./src/js/home/index.js");
+/******/ 	
+/******/ })()
+;
