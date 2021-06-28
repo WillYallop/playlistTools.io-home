@@ -9,6 +9,7 @@
     box-shadow: $shadow;
     transition: none;
     overflow: hidden;
+    z-index: 1000;
     .wrapper {
         @include wrapper;
         height: 80px;

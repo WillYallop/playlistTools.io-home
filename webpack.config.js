@@ -4,6 +4,8 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
     entry: {
+        main: './src/js/main.js',
+
         index: './src/js/home/index.js',
         playlistEditor: './src/js/playlist-editor/index.js',  
         playlistCoverMaker: './src/js/playlist-cover-maker/index.js'

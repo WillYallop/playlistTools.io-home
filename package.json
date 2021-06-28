@@ -2,7 +2,7 @@
   "name": "playlist-tools-home",
   "version": "1.0.0",
   "description": "",
-  "main": "src/js/home/index.js",
+  "main": "src/js/main.js",
   "scripts": {
     "build:scss": "node-sass --output-style compressed -o dist/css src/scss",
     "build:js": "webpack --mode=production",
