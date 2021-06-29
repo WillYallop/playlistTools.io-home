@@ -17,7 +17,32 @@ $shadow: 0px 20px 30px rgba(0, 0, 0, 0.1);
 $animationSpeed: 0.1s;
 
 $sectionSpacing: 150px;
+$mobTabSpacing: 100px;
+// Media Queries
+$media-queries: (
+    "mobile": "only screen and (max-width: 667px)",
+    "tablet": "only screen and (min-width: 668px) and (max-width: 1023.9px)",
+    "largeTablet": "only screen and (max-width: 1300px)",
+    "desktop": "only screen and (min-width: 1024px)",
+);
 
+
+/* Media Queries */ 
+@mixin forBreakpoint($breakpoints) {
+    $conditions : ();
+    @each $breakpoint in $breakpoints {
+        // If the key exists in the map
+        $conditions: append(
+            $conditions,
+            #{inspect(map-get($media-queries, $breakpoint))},
+            comma
+        );
+    }
+
+    @media #{$conditions} {
+        @content;
+    }
+}
 
 @mixin wrapper {
     width: 100%;
