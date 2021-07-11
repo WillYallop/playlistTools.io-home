@@ -53,25 +53,6 @@ class Circle {
         this.y = Math.random() * h;
         this.angle = Math.random() * Math.PI * 2;
         this.radius = Math.random() * (maxR - minR) + minR;
-
-        
-        // this.firstColor = `hsla(${Math.random() * 360}, 100%, 50%, 1)`;
-        // this.secondColor = `hsla(${Math.random() * 360}, 100%, 50%, 0)`;
-
-        // this.colorsArray = [
-        //     'rgba(118,44,248,0.3)',
-        //     'rgba(247,135,100,0.3)',
-        //     'rgba(232,44,248,0.3)',
-        //     'rgba(247,106,100,0.3)',
-        //     'rgba(44,83,248,0.3)',
-        //     'rgba(179,100,247,0.3)',
-        //     'rgba(44,170,248,0.3)',
-        //     'rgba(247,100,185,0.3)'
-        // ],
-
-        // this.firstColor = this.colorsArray[Math.floor(Math.random() * this.colorsArray.length)];
-        // this.secondColor = this.colorsArray[Math.floor(Math.random() * this.colorsArray.length)];
-
         this.firstColor = `rgba(255,255,255,${(Math.random() * 100) / 100})`;
         this.secondColor = `rgba(255,255,255,${(Math.random() * 100) / 100})`;
     }

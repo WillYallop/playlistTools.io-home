@@ -1,0 +1,30 @@
+.ctaCon {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .ctaCol {
+        footer {
+            a {
+                @include defaultBtnStyle;
+                display: inline-block;
+                border: 2px solid #fff;
+                &:first-child {
+                    margin-right: 20px;
+                }
+                &:hover {
+                    background-color: #fff;
+                    color: $titleText;
+                }
+            }
+        }
+    }
+    .ctaImCol {
+        display: flex;
+        justify-content: center;
+        img {
+            width: 308px;
+            height: 180px;
+        }
+    }
+}

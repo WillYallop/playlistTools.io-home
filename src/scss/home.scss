@@ -1,1 +1,52 @@
-@import '_settings', 'components/_homeBanner';
+@import '_settings', 'components/_homeBanner', 'components/sections/whyUseSection';
+
+// section default styling
+.sectionCon {
+    @include wrapper;
+    padding-top: $sectionSpacing;
+    padding-bottom: $sectionSpacing;
+    @include forBreakpoint(mobile tablet){
+        padding-top: $mobTabSpacing;
+        padding-bottom: $mobTabSpacing;
+    }
+    .sectionHeader {
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto 75px;
+        text-align: center;
+        h2 {
+            @include h2;
+            margin-bottom: 10px
+        }
+        p {
+            @include body;
+            font-size: 1.125em;
+        }
+    }
+}
+
+// cta default stykubg
+.ctaCon {
+    @include gradientAnimation;
+    width: 100%;
+    border-radius: 20px;
+    padding: 20px;
+    .ctaCol {
+        padding: 20px 20px 20px 0;
+        header {
+            margin-bottom: 10px;
+            h3 {
+                @include h3;
+                color: $titleLight;
+            }
+        }
+        p {
+            font-size: 1em;
+            color: $bodyLight;
+            max-width: 400px;
+        }
+        footer {
+            margin-top: 20px;
+        }
+    }
+}
