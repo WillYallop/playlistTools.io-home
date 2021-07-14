@@ -8,9 +8,9 @@
             a {
                 @include defaultBtnStyle;
                 display: inline-block;
-                border: 2px solid #fff;
+                border: 0.2rem solid #fff;
                 &:first-child {
-                    margin-right: 20px;
+                    margin-right: 2rem;
                 }
                 &:hover {
                     background-color: #fff;

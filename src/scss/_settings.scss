@@ -11,13 +11,13 @@ $bodyText: #575360;
 $titleLight: #fff;
 $bodyLight: rgb(238, 238, 238);
 
-$maxWidth: 1500px;
-$padding: 20px;
-$shadow: 0px 20px 30px rgba(0, 0, 0, 0.1);
+$maxWidth: 150rem;
+$padding: 2rem;
+$shadow: 0rem 2rem 3rem rgba(0, 0, 0, 0.1);
 $animationSpeed: 0.1s;
 
-$sectionSpacing: 150px;
-$mobTabSpacing: 100px;
+$sectionSpacing: 15rem;
+$mobTabSpacing: 10rem;
 // Media Queries
 $media-queries: (
     "mobile": "only screen and (max-width: 667px)",
@@ -65,20 +65,20 @@ $media-queries: (
 
 @mixin title {
     color: $titleText;
-    font-size: 1em;
+    font-size: 1.6rem;
     font-weight: bold;
 }
 @mixin body {
     color: $bodyText;
-    font-size: 1em;
+    font-size: 1.6rem;
 }
 @mixin h2 {
     color: $titleText;
-    font-size: 1.875em; // 40px
+    font-size: 4rem;
 }
 @mixin h3 {
     color: $titleText;
-    font-size: 1.25em; // 20px
+    font-size: 2rem;
 }
 @mixin h4 {
     
@@ -87,11 +87,11 @@ $media-queries: (
 // buttons
 @mixin defaultBtnStyle {
     cursor: pointer;
-    padding: 10px 40px;
-    border-radius: 40px;
+    padding: 1rem 4rem;
+    border-radius: 4rem;
     border: none;
     transition: $animationSpeed;
-    font-size: 1em;
+    font-size: 1.6rem;
     color: #fff;
     text-decoration: none;
     font-weight: bold;

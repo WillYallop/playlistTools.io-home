@@ -1,5 +1,8 @@
 @import '_settings', 'components/_header';
 
+html {
+    font-size: 62.5%;
+}
 body {
     background-color: $background;
     position: relative;

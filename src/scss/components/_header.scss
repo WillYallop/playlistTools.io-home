@@ -1,24 +1,24 @@
 .headerCon {
     position: fixed;
-    top: 20px;
-    left: 20px;
-    right: 20px;
-    min-height: 80px;
+    top: 2rem;
+    left: 2rem;
+    right: 2rem;
+    min-height: 8rem;
     background-color: $background;
-    border-radius: 20px;
+    border-radius: 2rem;
     box-shadow: $shadow;
     transition: none;
     overflow: hidden;
     z-index: 1000;
     .wrapper {
         @include wrapper;
-        height: 80px;
+        height: 8rem;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding-top: 20px;
-        padding-bottom: 20px;
-        border-bottom: 1px solid lighten($accent1, 40%);
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        border-bottom: 0.1rem solid lighten($accent1, 40%);
         .logoImg {
             height: 35px;
             width: 141.72px;
@@ -31,14 +31,14 @@
             }
         }
         .navCon {
-            height: 60px;
+            height: 6rem;
             display: flex;
             align-items: center;
             .navLink {
                 @include title;
-                margin-right: 40px;
+                margin-right: 4rem;
                 text-decoration: none;
-                padding: 10px;
+                padding: 1rem;
                 background-color: transparent;
                 border: none;
                 position: relative;
@@ -56,7 +56,7 @@
                         height: 4px;
                         background-color: $accent1;
                         animation: $animationSpeed 1 slideInFromLeft;
-                        border-radius: 10px;
+                        border-radius: 1rem;
                         @keyframes slideInFromLeft {
                             0% {
                               width: 0px;
@@ -70,11 +70,11 @@
                     }
                 }
                 img {
-                    height: 10px;
-                    width: 10px;
-                    margin-left: 5px;
+                    height: 1rem;
+                    width: 1rem;
+                    margin-left: 0.5rem;
                 }
-                @media only screen and (max-width: 900px) {
+                @media only screen and (max-width: 90rem) {
                     display: none;
                 }
                 &.toggleBtn {
@@ -85,7 +85,7 @@
                             width: 28.56px;
                         }
                     }
-                    @media only screen and (max-width: 900px) {
+                    @media only screen and (max-width: 90rem) {
                         display: flex;
                         margin-right: 0;
                         .mobileInner {
@@ -109,7 +109,7 @@
                 &:focus, &:hover {
                     background-color: $accent1Dark;
                 }
-                @media only screen and (max-width: 900px) {
+                @media only screen and (max-width: 90rem) {
                     display: none;
                 }
             }
@@ -121,7 +121,7 @@
         transition: max-height $animationSpeed ease-out;
         // display: block;
         height: auto;
-        max-height: 200px;
+        max-height: 20rem;
         &.closed {
             // display: none;
             max-height: 0;
@@ -129,10 +129,10 @@
         .wrapper {
             @include wrapper;
             height: auto;
-            padding-bottom: 20px;
+            padding-bottom: 2rem;
             display: flex;
             flex-wrap: wrap;
-            max-height: calc(100vh - 220px);
+            max-height: calc(100vh - 22rem);
             overflow-y: scroll;
             &::-webkit-scrollbar {
                 display: none;
@@ -141,13 +141,13 @@
             .mobileLinks {
                 display: none;
                 width: 100%;
-                margin-top: 20px;
-                @media only screen and (max-width: 900px) {
+                margin-top: 2rem;
+                @media only screen and (max-width: 90rem) {
                     display: block;
                 }
                 li {
                     width: 100%;
-                    margin-bottom: 10px;
+                    margin-bottom: 1rem;
                     &:last-child {
                         margin-bottom: 0;
                     }
@@ -159,20 +159,20 @@
                         width: 100%;
                         text-decoration: none;
                         padding: $padding;
-                        border-radius: 20px;
-                        border: 1px solid lighten($accent1, 40%);
+                        border-radius: 2rem;
+                        border: 0.1rem solid lighten($accent1, 40%);
                         
                         &:hover {
                             background-color: lighten($accent1, 40%);
-                            border: 1px solid lighten($accent1, 35%);
+                            border: 0.1rem solid lighten($accent1, 35%);
                         }
                         &:focus {
                             background-color: lighten($accent1, 40%);
-                            border: 1px solid lighten($accent1, 35%);
+                            border: 0.1rem solid lighten($accent1, 35%);
                         }
                         img {
-                            height: 15px;
-                            width: 15px;
+                            height: 1.5rem;
+                            width: 1.5rem;
                             transform: rotate(270deg)
                         }
                     }
@@ -183,7 +183,7 @@
                 width: 100%;
                 background-color: $accent1;
                 display: none;
-                @media only screen and (max-width: 900px) {
+                @media only screen and (max-width: 90rem) {
                     display: block;
                 }
                 &:focus, &:hover {
@@ -194,37 +194,37 @@
             .dropdownMenu {
                 width: 100%;
                 display: grid;
-                gap: 10px;
-                padding-top: 20px;
-                grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-                margin-bottom: 20px;
+                gap: 1rem;
+                padding-top: 2rem;
+                grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr));
+                margin-bottom: 2rem;
                 .menuItem {
                     a {
                         display: flex;
                         text-decoration: none;
                         padding: $padding;
-                        border-radius: 20px;
-                        border: 1px solid lighten($accent1, 40%);
+                        border-radius: 2rem;
+                        border: 0.1rem solid lighten($accent1, 40%);
                         &:hover {
                             background-color: lighten($accent1, 40%);
-                            border: 1px solid lighten($accent1, 35%);
+                            border: 0.1rem solid lighten($accent1, 35%);
                         }
                         &:focus {
                             background-color: lighten($accent1, 40%);
-                            border: 1px solid lighten($accent1, 35%);
+                            border: 0.1rem solid lighten($accent1, 35%);
                         }
                         .icon {
-                            width: 40px;
-                            height: 40px;
-                            min-width: 40px;
+                            width: 4rem;
+                            height: 4rem;
+                            min-width: 4rem;
                             border-radius: 50%;
                             background-color: lighten($accent1, 35%);
                         }
                         ul {
-                            padding-left: 20px;
+                            padding-left: 2rem;
                             .title {
                                 @include title;
-                                margin-bottom: 10px;
+                                margin-bottom: 1rem;
                             }
                             .desc {
                                 @include body;
@@ -241,31 +241,31 @@
                 display: flex;
                 flex-wrap: wrap;
                 justify-content: space-between;
-                border-radius: 20px;
+                border-radius: 2rem;
                 .textArea {
                     .title {
                         @include title;
                         color: $titleLight;
-                        font-size: 1.25em;
-                        margin-bottom: 10px;
+                        font-size: 1.8rem;
+                        margin-bottom: 1rem;
                     }
                     .body {
                         color: $bodyLight;
-                        font-size: 1em;
-                        max-width: 400px;
+                        font-size: 1.6rem;
+                        max-width: 40rem;
                     }
                 }
                 .btnCol {
                     display: flex;
                     flex-wrap: wrap;
                     align-items: center;
-                    gap: 10px;
+                    gap: 1rem;
                     a { 
                         @include defaultBtnStyle;
                         display: block;
-                        border: 2px solid #fff;
+                        border: 0.2rem solid #fff;
                         &:first-child {
-                            margin-right: 10px;
+                            margin-right: 1rem;
                         }
                         &:hover {
                             background-color: #fff;
@@ -277,7 +277,7 @@
                         }
                     }
                 }
-                @media only screen and (max-width: 900px) {
+                @media only screen and (max-width: 90rem) {
                     display: none;
                 }
             }

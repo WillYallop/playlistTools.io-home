@@ -4,23 +4,22 @@
 .sectionCon {
     @include wrapper;
     padding-top: $sectionSpacing;
-    padding-bottom: $sectionSpacing;
     @include forBreakpoint(mobile tablet){
         padding-top: $mobTabSpacing;
-        padding-bottom: $mobTabSpacing;
     }
     .sectionHeader {
         width: 100%;
-        max-width: 600px;
-        margin: 0 auto 75px;
+        max-width: 60rem;
+        margin: 0 auto 7.5rem;
         text-align: center;
         h2 {
             @include h2;
-            margin-bottom: 10px
+            font-size : clamp(3rem, 3vw, 4rem);
+            margin-bottom: 1rem;
         }
         p {
             @include body;
-            font-size: 1.125em;
+            font-size: 1.8rem;
         }
     }
 }
@@ -29,24 +28,24 @@
 .ctaCon {
     @include gradientAnimation;
     width: 100%;
-    border-radius: 20px;
-    padding: 20px;
+    border-radius: 2rem;
+    padding: 2rem;
     .ctaCol {
-        padding: 20px 20px 20px 0;
+        padding: 2rem 2rem 2rem 0;
         header {
-            margin-bottom: 10px;
+            margin-bottom: 1rem;
             h3 {
                 @include h3;
                 color: $titleLight;
             }
         }
         p {
-            font-size: 1em;
+            font-size: 1.6rem;
             color: $bodyLight;
-            max-width: 400px;
+            max-width: 40rem;
         }
         footer {
-            margin-top: 20px;
+            margin-top: 2rem;
         }
     }
 }
