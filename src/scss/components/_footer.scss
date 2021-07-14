@@ -1,0 +1,7 @@
+.footerCon {
+    @include wrapper;
+    padding-top: $sectionSpacing;
+    @include forBreakpoint(mobile tablet){
+        padding-top: $mobTabSpacing;
+    }
+} 
