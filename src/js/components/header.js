@@ -39,4 +39,10 @@ function updateDropdownMaxHeight() {
     }
 }
 
-export { handleNavDropdown, updateDropdownMaxHeight }
+// Add event listener to dropdown
+handleNavDropdown();
+
+// On resize
+window.addEventListener('resize', () => {
+    updateDropdownMaxHeight();
+})

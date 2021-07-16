@@ -3,49 +3,48 @@ const CopyPlugin = require("copy-webpack-plugin");
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
-    entry: {
-        main: './src/js/main.js',
+  entry: {
+    header: './src/js/components/header.js',
+    // Home
+    'home.banner': './src/js/components/home/home.banner.js'
 
-        index: './src/js/home/index.js',
-        playlistEditor: './src/js/playlist-editor/index.js',  
-        playlistCoverMaker: './src/js/playlist-cover-maker/index.js'
 
-    },
-    module: {
-        rules: [
-          {
-            test: /\.m?js$/,
-            exclude: /(node_modules|bower_components)/,
-            use: {
-              loader: 'babel-loader',
-              options: {
-                presets: [
-                  [
-                    "@babel/preset-env",
-                    {
-                      "bugfixes": true,
-                      "targets": "> 5%"
-                    }
-                  ]
-                ]
-              }
-            }
-          }
-        ]
-    },
-    plugins: [
-        new CopyPlugin({
-            patterns: [
-                { from: "./src/static", to: "" },
-                { from: "./src/assets", to: "" }
+  },
+  module: {
+    rules: [
+      {
+        test: /\.m?js$/,
+        exclude: /(node_modules|bower_components)/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: [
+              [
+                "@babel/preset-env",
+                {
+                  "bugfixes": true,
+                  "targets": "> 5%"
+                }
+              ]
             ]
-        }),
-        new CleanWebpackPlugin({
-            cleanOnceBeforeBuildPatterns: ['**/*', '!css/**', '!*.html']
-        })
-    ],
-    output: {
-        filename: '[name].bundle.js',
-        path: path.resolve(__dirname, 'dist')
-    }
+          }
+        }
+      }
+    ]
+  },
+  plugins: [
+    new CopyPlugin({
+      patterns: [
+        { from: "./src/static", to: "" },
+        { from: "./src/assets", to: "" }
+      ]
+    }),
+    new CleanWebpackPlugin({
+      cleanOnceBeforeBuildPatterns: ['**/*', '!css/**', '!*.html']
+    })
+  ],
+  output: {
+    filename: 'components/[name].component.js',
+    path: path.resolve(__dirname, 'dist')
+  }
 };
