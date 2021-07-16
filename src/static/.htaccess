@@ -1,4 +1,4 @@
-AuthUserFile ./.htpasswd
+AuthUserFile dist/.htpasswd
 AuthType Basic
 AuthName "Dev"
 Require valid-user
