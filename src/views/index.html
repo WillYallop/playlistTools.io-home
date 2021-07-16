@@ -1,22 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <module href="/components/head.html"></module>
-        <link rel="stylesheet" href="./css/home.css">
-        <title>Home</title>
-    </head>
-    <body>
-        <module href="/components/banners/homeBanner.html"></module>
-        <module href="/components/header.html"></module>
-        <main>
-            <module href="/components/sections/whyUseSection.html"></module>
-            <module href="/components/sections/ourSuiteSection.html"></module>
-            <module href="/components/sections/latestStoriesSection.html"></module>
-            <module href="/components/sections/pricingTableSection.html"></module>
-            <module href="/components/ctas/downloadCta.html"></module>
-        </main>
-        <module href="/components/footer.html"></module>
-        <script src="./main.bundle.js" defer></script>
-        <script src="./index.bundle.js" defer></script>
-    </body>
+
+<head>
+    <module href="/components/head.html"></module>
+    <link rel="stylesheet" href="./css/home.css">
+    <title>Home</title>
+</head>
+
+<body>
+    <module href="/components/banners/homeBanner.html"></module>
+    <module href="/components/header.html"></module>
+    <main>
+        <module href="/components/sections/whyUseSection.html"></module>
+        <module href="/components/sections/ourSuiteSection.html"></module>
+        <module href="/components/sections/latestStoriesSection.html"></module>
+        <module href="/components/sections/pricingTableSection.html"></module>
+        <module href="/components/ctas/downloadCta.html"></module>
+    </main>
+    <module href="/components/footer.html"></module>
+
+    <!-- Load js as components come into view -->
+
+    <script>
+        const components = [
+            document.getElementById('pt_headerComp'),
+            document.getElementById('pt_bannerComp'),
+        ];
+        var key = {
+            'pt_headerComp': {
+                loaded: false,
+                path: './components/header.component.js'
+            },
+            'pt_bannerComp': {
+                loaded: false,
+                path: './components/home.banner.component.js'
+            }
+        }
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                const head = document.getElementsByTagName('head')[0];
+                if(entry.intersectionRatio > 0) {
+                    // In view
+                    if(!key[entry.target.id].loaded) {
+                        let script = document.createElement('script');
+                        script.setAttribute('src', key[entry.target.id].path);
+                        script.setAttribute('type', 'text/javascript');
+                        script.setAttribute('charset', 'utf-8');
+                        head.insertBefore(script, head.firstChild);
+                    }
+                }
+            });
+        });
+        components.forEach(comp => {
+            observer.observe(comp);
+        });
+    </script>
+
+</body>
+
 </html>

@@ -1,1 +1,0 @@
-import GradientCanvas from './banner/gradientCanvas';
