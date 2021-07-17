@@ -8,6 +8,10 @@
 'components/ctas/downloadCta',
 'components/footer' ;
 
+main {
+    overflow: hidden;
+}
+
 // section default styling
 .sectionCon {
     @include wrapper;
@@ -20,6 +24,9 @@
         max-width: 60rem;
         margin: 0 auto 7.5rem;
         text-align: center;
+        @include forBreakpoint(mobile tablet){
+            margin-bottom: 4rem
+        }
         h2 {
             @include h2;
             font-size : clamp(3rem, 3vw, 4rem);

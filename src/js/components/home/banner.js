@@ -72,6 +72,4 @@ class Circle {
     }
 }
 
-window.onload = () => {
-    new GradientAnimation();
-}
+new GradientAnimation();

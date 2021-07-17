@@ -1,8 +1,3 @@
-AuthUserFile .htpasswd
-AuthType Basic
-AuthName "My restricted Area"
-Require valid-us
-
 RewriteEngine on
 
 RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]

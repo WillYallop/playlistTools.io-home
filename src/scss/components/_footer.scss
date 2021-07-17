@@ -4,4 +4,7 @@
     @include forBreakpoint(mobile tablet){
         padding-top: $mobTabSpacing;
     }
+    .logoImg {
+        width: 200px;
+    }
 } 
