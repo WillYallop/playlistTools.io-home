@@ -1,4 +1,3 @@
-import Hammer from '../../hammer';
 const parentEle = document.getElementById('pt_toolsListCol'); 
 
 // Touch device
@@ -86,78 +85,52 @@ if(isTouchDevice()) {
     var slides = 4;
     var prevScreenX = undefined;
     var slideActive = false;
+    var activeSlide = 0;
+    slideConEle.addEventListener('touchstart', (e) => {
 
-    var hammer = new Hammer(slideConEle);
-    hammer.get('swipe').set({
-        direction: Hammer.DIRECTION_ALL
+        prevScreenX = e.changedTouches[0].screenX;
     });
-    hammer.on("swipeleft swiperight", function(ev) {
-        for(var i = 0; i < sliderConEle.children.length; i++) {
-            let child = sliderConEle.children[i];
-            if(child.classList.contains('active')) var activeSlide = i;
-        }
-        if(ev.type === 'swipeleft') {
-            if(activeSlide + 1 < slides) {
-                selectFeature(parentEle.children[activeSlide + 1]);
-                translateSliderSlide(activeSlide + 1);
-                updateActivePagination(activeSlide + 1);
+    slideConEle.addEventListener('touchmove', (e) => {
+        if(prevScreenX != undefined) {
+            let newScreenX = e.changedTouches[0].screenX;
+            // Work out what slide we are currently on
+            for(var i = 0; i < sliderConEle.children.length; i++) {
+                let child = sliderConEle.children[i];
+                if(child.classList.contains('active')) activeSlide = i;
             }
-        } 
-        else if(ev.type === 'swiperight') {
-            if(activeSlide - 1 >= 0) {
-                selectFeature(parentEle.children[activeSlide - 1]);
-                translateSliderSlide(activeSlide - 1);
-                updateActivePagination(activeSlide - 1);
+            // see direction
+            if(newScreenX > prevScreenX) {
+                e.preventDefault();
+                // Right swipe
+                // dec current slide
+                if(!slideActive) {
+                    if(activeSlide - 1 >= 0) {
+                        selectFeature(parentEle.children[activeSlide - 1]);
+                        translateSliderSlide(activeSlide - 1);
+                        updateActivePagination(activeSlide - 1);
+                    }
+                    slideActive = true;
+                }
+            }
+            else {
+                e.preventDefault();
+                // Left swipe
+                // inc current slide 
+                if(!slideActive) {
+                    if(activeSlide + 1 < slides) {
+                        selectFeature(parentEle.children[activeSlide + 1]);
+                        translateSliderSlide(activeSlide + 1);
+                        updateActivePagination(activeSlide + 1);
+                    }
+                    slideActive = true;
+                }
             }
         }
     });
-    
-
-
-
-    // slideConEle.addEventListener('touchstart', (e) => {
-    //     e.preventDefault();
-    //     prevScreenX = e.changedTouches[0].screenX;
-    // });
-    // slideConEle.addEventListener('touchmove', (e) => {
-    //     if(prevScreenX != undefined) {
-    //         let newScreenX = e.changedTouches[0].screenX;
-    //         // Work out what slide we are currently on
-    //         for(var i = 0; i < sliderConEle.children.length; i++) {
-    //             let child = sliderConEle.children[i];
-    //             if(child.classList.contains('active')) activeSlide = i;
-    //         }
-    //         // see direction
-    //         if(newScreenX > prevScreenX) {
-    //             // Right swipe
-    //             // dec current slide
-    //             if(!slideActive) {
-    //                 if(activeSlide - 1 >= 0) {
-    //                     selectFeature(parentEle.children[activeSlide - 1]);
-    //                     translateSliderSlide(activeSlide - 1);
-    //                     updateActivePagination(activeSlide - 1);
-    //                 }
-    //                 slideActive = true;
-    //             }
-    //         }
-    //         else {
-    //             // Left swipe
-    //             // inc current slide 
-    //             if(!slideActive) {
-    //                 if(activeSlide + 1 < slides) {
-    //                     selectFeature(parentEle.children[activeSlide + 1]);
-    //                     translateSliderSlide(activeSlide + 1);
-    //                     updateActivePagination(activeSlide + 1);
-    //                 }
-    //                 slideActive = true;
-    //             }
-    //         }
-    //     }
-    // });
-    // slideConEle.addEventListener('touchend', (e) => {
-    //     prevScreenX = undefined;
-    //     slideActive = false;
-    // });
+    slideConEle.addEventListener('touchend', (e) => {
+        prevScreenX = undefined;
+        slideActive = false;
+    });
 }
 
 // For features, add event listeners
