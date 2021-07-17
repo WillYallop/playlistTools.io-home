@@ -80,17 +80,20 @@ function paginationListeners() {
 paginationListeners();
 
 if(isTouchDevice()) {
-    var slideConEle = document.getElementById('pt_sliderCon');
+    var slideConEle = document.getElementById('pt_slideCon');
+    var sliderConEle = document.getElementById('pt_sliderCon');
     var slides = 4;
     var prevScreenX = undefined;
     var slideActive = false;
+    slideConEle.addEventListener('touchstart', (e) => {
+        prevScreenX = e.changedTouches[0].screenX;
+    });
     slideConEle.addEventListener('touchmove', (e) => {
         if(prevScreenX != undefined) {
             let newScreenX = e.changedTouches[0].screenX;
-            var activeSlide = 0;
             // Work out what slide we are currently on
-            for(var i = 0; i < slideConEle.children.length; i++) {
-                let child = slideConEle.children[i];
+            for(var i = 0; i < sliderConEle.children.length; i++) {
+                let child = sliderConEle.children[i];
                 if(child.classList.contains('active')) activeSlide = i;
             }
             // see direction
@@ -119,14 +122,12 @@ if(isTouchDevice()) {
                     slideActive = true;
                 }
             }
-
         }
-        prevScreenX = e.changedTouches[0].screenX;
     });
     slideConEle.addEventListener('touchend', (e) => {
         prevScreenX = undefined;
         slideActive = false;
-    })
+    });
 }
 
 // For features, add event listeners
