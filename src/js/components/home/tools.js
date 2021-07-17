@@ -100,9 +100,17 @@ if(isTouchDevice()) {
                 let child = sliderConEle.children[i];
                 if(child.classList.contains('active')) activeSlide = i;
             }
-            if(Math.abs(newScreenY - prevScreenY) > 100) {
+
+            // take the action of the biggest difference for axis movement
+            var xDifference = Math.abs(newScreenX - prevScreenX);
+            var yDifference = Math.abs(newScreenY - prevScreenY);
+
+            // scroll vertically
+            if(yDifference > xDifference) {
                 scroling = true;
-            } else {
+            }
+            // scroll horizontally
+            else {
                 if(!scroling) {
                     e.preventDefault();
                     // see direction
