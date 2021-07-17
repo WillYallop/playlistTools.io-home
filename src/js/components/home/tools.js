@@ -89,6 +89,7 @@ if(isTouchDevice()) {
         prevScreenX = e.changedTouches[0].screenX;
     });
     slideConEle.addEventListener('touchmove', (e) => {
+        
         if(prevScreenX != undefined) {
             let newScreenX = e.changedTouches[0].screenX;
             // Work out what slide we are currently on
@@ -98,6 +99,7 @@ if(isTouchDevice()) {
             }
             // see direction
             if(newScreenX > prevScreenX) {
+                e.preventDefault();
                 // Right swipe
                 // dec current slide
                 if(!slideActive) {
@@ -108,9 +110,9 @@ if(isTouchDevice()) {
                     }
                     slideActive = true;
                 }
-
             }
             else {
+                e.preventDefault();
                 // Left swipe
                 // inc current slide 
                 if(!slideActive) {
