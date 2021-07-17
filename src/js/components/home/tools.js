@@ -86,6 +86,7 @@ if(isTouchDevice()) {
     var prevScreenY = undefined;
     var slideActive = false;
     var activeSlide = 0;
+    var scroling = false;
     sliderConEle.addEventListener('touchstart', (e) => {
         prevScreenX = e.changedTouches[0].screenX;
         prevScreenY = e.changedTouches[0].screenY;
@@ -99,45 +100,45 @@ if(isTouchDevice()) {
                 let child = sliderConEle.children[i];
                 if(child.classList.contains('active')) activeSlide = i;
             }
-
             if(Math.abs(newScreenY - prevScreenY) > 100) {
-                console.log('scroll up/down')
+                scroling = true;
             } else {
-                e.preventDefault();
-                // see direction
-                if(newScreenX > prevScreenX) {
-                    // Right swipe
-                    // dec current slide
-                    if(!slideActive) {
-                        if(activeSlide - 1 >= 0) {
-                            selectFeature(parentEle.children[activeSlide - 1]);
-                            translateSliderSlide(activeSlide - 1);
-                            updateActivePagination(activeSlide - 1);
+                if(!scroling) {
+                    e.preventDefault();
+                    // see direction
+                    if(newScreenX > prevScreenX) {
+                        // Right swipe
+                        // dec current slide
+                        if(!slideActive) {
+                            if(activeSlide - 1 >= 0) {
+                                selectFeature(parentEle.children[activeSlide - 1]);
+                                translateSliderSlide(activeSlide - 1);
+                                updateActivePagination(activeSlide - 1);
+                            }
+                            slideActive = true;
                         }
-                        slideActive = true;
                     }
-                }
-                else {
-                    // Left swipe
-                    // inc current slide 
-                    if(!slideActive) {
-                        if(activeSlide + 1 < slides) {
-                            selectFeature(parentEle.children[activeSlide + 1]);
-                            translateSliderSlide(activeSlide + 1);
-                            updateActivePagination(activeSlide + 1);
+                    else {
+                        // Left swipe
+                        // inc current slide 
+                        if(!slideActive) {
+                            if(activeSlide + 1 < slides) {
+                                selectFeature(parentEle.children[activeSlide + 1]);
+                                translateSliderSlide(activeSlide + 1);
+                                updateActivePagination(activeSlide + 1);
+                            }
+                            slideActive = true;
                         }
-                        slideActive = true;
                     }
                 }
             }
-
-
         }
     });
     sliderConEle.addEventListener('touchend', (e) => {
         prevScreenX = undefined;
         prevScreenY = undefined;
         slideActive = false;
+        scroling = false;
     });
 }
 
