@@ -141,7 +141,7 @@ if(isTouchDevice()) {
                 }
             }
         }
-    });
+    }, { passive: false });
     sliderConEle.addEventListener('touchend', (e) => {
         prevScreenX = undefined;
         prevScreenY = undefined;
