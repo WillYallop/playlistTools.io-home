@@ -1,4 +1,5 @@
 @import 
+'main.scss',
 '_settings', 
 'components/_homeBanner', 
 'components/sections/whyUseSection', 
@@ -8,6 +9,10 @@
 'components/ctas/downloadCta',
 'components/footer' ;
 
+.bellowFold {
+    content-visibility: auto;
+    contain-intrinsic-size: 0 1000px;
+}
 // section default styling
 .sectionCon {
     @include wrapper;
