@@ -1,0 +1,115 @@
+.pricingSectBody {
+
+
+    .privingTableCon {
+        width: 90%;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+        gap: 2rem;
+        align-items: center;
+        // Pricing col
+        .pricingTableCol {
+            background-color: #fff;
+            border-radius: 2rem;
+            box-shadow: $shadow;
+            position: relative;
+            &.active {
+                .pricingInner  {
+                    padding: 4rem 2rem;
+                }
+                &::before {
+                    content: '';
+                    @include gradientAnimation;
+                    position: absolute;
+                    left: -0.2rem;
+                    top: -0.2rem;
+                    bottom: -0.2rem;
+                    right: -0.2rem;
+                    z-index: 0;
+                    border-radius: 2rem;
+                }
+            }
+            .pricingInner {
+                z-index: 10;
+                position: relative;
+                background-color: #fff;
+                border-radius: 1.8rem;
+                height: 100%;
+                width: 100%;
+                padding: 2rem;
+                .packageNameP {
+                    font-size: 1.8rem;
+                    color: $titleText;
+                    margin-bottom: 1rem;
+                    font-weight: bold;
+                } 
+                h3 {
+                    @include h3;
+                    font-size: 2.4rem;
+                    span {
+                        font-size: 1.6rem;
+                        color: rgb(148, 148, 148)
+                    }
+                }
+                .packageDesc {
+                    font-size: 1.6rem;
+                    color: #707070;
+                    max-width: 25rem;
+                    margin-top: 0.5rem;
+                } 
+                .packageFeatures {
+                    margin: 2.5rem 0;
+                    li {
+                        font-size: 1.6rem;
+                        color: rgb(22, 22, 22);
+                        display: flex;
+                        padding: 0.5rem 0;
+                        &::before {
+                            display: block;
+                            content: '';
+                            height: 2rem;
+                            width: 2rem;
+                            margin-right: 1rem;
+                            border-radius: 50%;
+                            background-color: rgb(180, 180, 180);
+                        }
+                    }
+                } 
+                a {
+                    @include defaultBtnStyle;
+                    width: 100%;
+                    display: block;
+                    background-color: $accent1;
+                    position: relative;
+                    &::before {
+                        @include gradientAnimation;
+                        content: 'choose plan';
+                        opacity: 0;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        border-radius: 2rem;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        transition: $animationSpeed;
+                    }
+                    &:hover {
+                        &::before  {
+                            opacity: 1;
+                        }
+                    }
+                    &:focus {
+                        &::before  {
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+}
