@@ -12,9 +12,10 @@ function updateActivePagination(index) {
     var paginationConEle = document.getElementById('pt_sliderPagination');
     for(var i = 0; i < paginationConEle.children.length; i++) {
         let child = paginationConEle.children[i];
-        if(child.classList.contains('active')) child.classList.remove('active');
+        if(child.classList.contains('active')) child.classList.remove('active'), child.attributes['aria-pressed'].value = 'false';
     }
     paginationConEle.children[index].classList.add('active');
+    paginationConEle.children[index].attributes['aria-pressed'].value = 'true';
 }
 
 // Slide new image into view
@@ -80,14 +81,12 @@ function paginationListeners() {
 paginationListeners();
 
 if(isTouchDevice()) {
-
     function imageTouchEvent(target) {
         var sliderConEle = document.getElementById('pt_sliderCon');
         var slides = 4;
         var prevScreenX = undefined;
         var prevScreenY = undefined;
         var slideActive = false;
-        var activeSlide = 0;
         var scroling = false;
         target.addEventListener('touchstart', (e) => {
             prevScreenX = e.changedTouches[0].screenX;
@@ -100,7 +99,7 @@ if(isTouchDevice()) {
                 // Work out what slide we are currently on
                 for(var i = 0; i < sliderConEle.children.length; i++) {
                     let child = sliderConEle.children[i];
-                    if(child.classList.contains('active')) activeSlide = i;
+                    if(child.classList.contains('active')) var activeSlide = i;
                 }
                 // take the action of the biggest difference for axis movement
                 var xDifference = Math.abs(newScreenX - prevScreenX);
@@ -149,7 +148,6 @@ if(isTouchDevice()) {
             scroling = false;
         });
     }
-
     var imageEles = document.querySelectorAll('[slide]');
     for(var i = 0; i < imageEles.length; i++) {
         imageTouchEvent(imageEles[i]);

@@ -13,7 +13,7 @@ $bodyLight: rgb(238, 238, 238);
 
 $maxWidth: 150rem;
 $padding: 2rem;
-$shadow: 0rem 2rem 3rem rgba(0, 0, 0, 0.1);
+$shadow: 0rem 2rem 3rem rgba(0, 0, 0, 0.05);
 $animationSpeed: 0.1s;
 
 $sectionSpacing: 15rem;
@@ -84,6 +84,19 @@ $media-queries: (
     
 }
 
+@mixin inpStyle {
+    background-color: #fff;
+    border: 0.1rem solid #EAEAEA;
+    height: 4rem;
+    border-radius: 2rem;
+    padding: 0 2rem;
+    font-size: 1.6rem;
+    width: 100%;
+    color: $bodyText;
+    &:focus {
+        border: 0.1rem solid $accent1;
+    }
+}
 // buttons
 @mixin defaultBtnStyle {
     cursor: pointer;

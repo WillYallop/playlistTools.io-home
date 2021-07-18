@@ -26,6 +26,7 @@
             document.getElementById('pt_headerComp'),
             document.getElementById('pt_bannerComp'),
             document.getElementById('pt_suiteSect'),
+            document.getElementById('pt_storiesSect'),
         ];
         var key = {
             'pt_headerComp': {
@@ -39,6 +40,10 @@
             'pt_suiteSect': {
                 loaded: false,
                 path: './components/tools.home.component.js'
+            },
+            'pt_storiesSect': {
+                loaded: false,
+                path: './components/stories.home.component.js'
             }
         }
         const observer = new IntersectionObserver((entries) => {
