@@ -103,9 +103,7 @@
                         }
                     }
                     &:focus {
-                        &::before  {
-                            opacity: 1;
-                        }
+                        transform: scale(1.07);
                     }
                 }
             }

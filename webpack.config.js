@@ -6,7 +6,6 @@ module.exports = {
   entry: {
     header: './src/js/components/header.js',
     // Home
-    'banner.home': './src/js/components/home/banner.js',
     'tools.home': './src/js/components/home/tools.js',
     'stories.home': './src/js/components/home/stories.js',
 

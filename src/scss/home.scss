@@ -9,7 +9,7 @@
 'components/footer' ;
 
 main {
-    overflow: hidden;
+    
 }
 
 // section default styling
@@ -37,32 +37,6 @@ main {
             font-size: 1.8rem;
             max-width: 60rem;
             margin: 0 auto;
-        }
-    }
-}
-
-// cta default stykubg
-.ctaCon {
-    @include gradientAnimation;
-    width: 100%;
-    border-radius: 2rem;
-    padding: 2rem;
-    .ctaCol {
-        padding: 2rem 2rem 2rem 0;
-        header {
-            margin-bottom: 1rem;
-            h3 {
-                @include h3;
-                color: $titleLight;
-            }
-        }
-        p {
-            font-size: 1.6rem;
-            color: $bodyLight;
-            max-width: 40rem;
-        }
-        footer {
-            margin-top: 2rem;
         }
     }
 }
