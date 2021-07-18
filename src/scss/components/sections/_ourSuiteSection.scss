@@ -10,6 +10,7 @@
     .toolsListCol { 
         width: 40%;
         min-width: 56rem;
+        position: relative;
         @include forBreakpoint(mobile tablet) {
             min-width: auto;
             width: 100%;
@@ -87,6 +88,50 @@
                 }
             }
         }
+        // mobile arrow nav
+        .mobArrowCon {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 10;
+            justify-content: space-between;
+            padding: 2rem;
+            height: 6rem;
+            @include forBreakpoint(mobile tablet) {
+                display: flex;
+            }
+            button {
+                background-color: #F8F8F8;
+                border: 0.1rem solid #F4F4F4;
+                border-radius: 50%;
+                height: 4rem;
+                width: 4rem;
+                transition: $animationSpeed;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                &:hover {
+                    background-color: #E8E8E8;
+                }
+                &:after {
+                    content: '';
+                    background-image: url('../images/icons/chevron-right.svg');
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    background-position: center;
+                    height: 2rem;
+                    width: 2rem;
+                    display: block;
+                }
+                &:first-child {
+                    &:after {
+                        transform: rotate(180deg);
+                    }
+                }
+            }
+        }
     }
     // Img col
     .featureImgSlider {
@@ -100,10 +145,8 @@
         overflow: hidden;
         position: relative;
         @include forBreakpoint(mobile tablet) {
-            width: calc(100% + 4rem);
+            width: 100%;
             min-height: auto;
-            margin-left: -2rem;
-            margin-right: -2rem;
             margin-bottom: -20px;
             padding: 0 0 4rem;
         }
@@ -113,17 +156,25 @@
                 width: 80%;
                 transition: 0.3s;
                 @include forBreakpoint(mobile tablet) {
-                    height: 40rem;
+                    height: 50rem;
                 }
                 .imgSlide {
                     min-width: 80%;
                     padding: 0 2rem;
                     transition: 0.3s;
-                    
+                    .mobile {
+                        display: none;
+                    }
                     @include forBreakpoint(mobile tablet) {
                         height: 100%;
                         display: flex;
                         align-items: center;
+                        .desktop {
+                            display: none;
+                        }
+                        .mobile {
+                            display: flex;
+                        }
                         img {
                             height: calc(100% - 8rem);
                             object-fit: contain;

@@ -11,7 +11,7 @@
         <!-- Tool list col -->
         <div id="pt_toolsListCol" class="toolsListCol">
             <!-- tool 1 -->
-            <section class="toolInfoRow active" tabindex="0" role="button" aria-pressed="true">
+            <section feature class="toolInfoRow active" tabindex="0" role="button" aria-pressed="true">
                 <div class="iconCon">1</div>
                 <div class="textarea">
                     <h3>Playlist Editor</h3>
@@ -19,7 +19,7 @@
                 </div>
             </section>
             <!-- tool 2 -->
-            <section class="toolInfoRow" tabindex="0" role="button" aria-pressed="false">
+            <section feature class="toolInfoRow" tabindex="0" role="button" aria-pressed="false">
                 <div class="iconCon">2</div>
                 <div class="textarea">
                     <h3>Playlist Monitoring</h3>
@@ -27,7 +27,7 @@
                 </div>
             </section>
             <!-- tool 3 -->
-            <section class="toolInfoRow" tabindex="0" role="button" aria-pressed="false">
+            <section feature class="toolInfoRow" tabindex="0" role="button" aria-pressed="false">
                 <div class="iconCon">3</div>
                 <div class="textarea">
                     <h3>Track Release Scheduler</h3>
@@ -35,28 +35,37 @@
                 </div>
             </section>
             <!-- tool 4 -->
-            <section class="toolInfoRow" tabindex="0" role="button" aria-pressed="false">
+            <section feature class="toolInfoRow" tabindex="0" role="button" aria-pressed="false">
                 <div class="iconCon">4</div>
                 <div class="textarea">
                     <h3>Playlist Release Scheduler</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis aliquam neque. Pellentesque tellus justo, laoreet vestibulum neque quis, dignissim interdum nunc.</p>
                 </div>
             </section>
+            <!-- Mobile arrow nav -->
+            <div class="mobArrowCon">
+                <button id="pt_sliderLeftBtn" aria-label="previous feature"></button>
+                <button id="pt_sliderRightBtn" aria-label="next feature"></button>
+            </div>
         </div>
         <!-- img col -->
         <div id="pt_slideCon" class="featureImgSlider">
             <div id="pt_sliderCon" class="sliderCon">
                 <div class="imgSlide active">
-                    <img slide src="./images/featurePhoneSlider1.svg" alt="">
+                    <img class="desktop" slide src="./images/featurePhoneSlider1.svg" alt="">
+                    <img class="mobile" slide src="./images/featurePhoneSlideMobile.svg" alt="">
                 </div>
                 <div class="imgSlide">
-                    <img slide src="./images/featurePhoneSlider2.svg" alt="">
+                    <img class="desktop" slide src="./images/featurePhoneSlider2.svg" alt="">
+                    <img class="mobile" slide src="./images/featurePhoneSlideMobile.svg" alt="">
                 </div>
                 <div class="imgSlide">
-                    <img slide src="./images/featurePhoneSlider3.svg" alt="">
+                    <img class="desktop" slide src="./images/featurePhoneSlider3.svg" alt="">
+                    <img class="mobile" slide src="./images/featurePhoneSlideMobile.svg" alt="">
                 </div>
                 <div class="imgSlide">
-                    <img slide src="./images/featurePhoneSlider4.svg" alt="">
+                    <img class="desktop" slide src="./images/featurePhoneSlider4.svg" alt="">
+                    <img class="mobile" slide src="./images/featurePhoneSlideMobile.svg" alt="">
                 </div>
             </div>
             <div id="pt_sliderPagination" class="paginationCon">

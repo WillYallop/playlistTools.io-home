@@ -38,8 +38,10 @@ function translateSliderSlide(index) {
 // Select new feature select elemenet
 function selectFeature(target) {
     for(var i = 0; i < parentEle.children.length; i++) {
-        var child = parentEle.children[i];
-        if(child.classList.contains('active')) child.classList.remove('active'), child.attributes['aria-pressed'].value = 'false';
+        if(parentEle.children[i].hasAttribute('feature')) {
+            var child = parentEle.children[i];
+            if(child.classList.contains('active')) child.classList.remove('active'), child.attributes['aria-pressed'].value = 'false';
+        }
     }
     // Set this child to active
     target.classList.add('active');
@@ -154,7 +156,42 @@ if(isTouchDevice()) {
     }
 }
 
+var leftBtnEle = document.getElementById('pt_sliderLeftBtn'); 
+var rightBtnEle = document.getElementById('pt_sliderRightBtn'); 
+
+function arrowBtnSliderNav(direction) {
+    var sliderConEle = document.getElementById('pt_sliderCon');
+    var slides = 4;
+    for(var i = 0; i < sliderConEle.children.length; i++) {
+        let child = sliderConEle.children[i];
+        if(child.classList.contains('active')) var activeSlide = i;
+    }
+    if(direction === 'right') {    
+        if(activeSlide + 1 < slides) {
+            selectFeature(parentEle.children[activeSlide + 1]);
+            translateSliderSlide(activeSlide + 1);
+            updateActivePagination(activeSlide + 1);
+        }
+    }
+    if(direction === 'left') {
+        if(activeSlide - 1 >= 0) {
+            selectFeature(parentEle.children[activeSlide - 1]);
+            translateSliderSlide(activeSlide - 1);
+            updateActivePagination(activeSlide - 1);
+        }
+    }
+}
+
+leftBtnEle.addEventListener('click', (e) => {
+    arrowBtnSliderNav('left');
+}, false);
+rightBtnEle.addEventListener('click', (e) => {
+    arrowBtnSliderNav('right');
+}, false);
+
 // For features, add event listeners
 for(var i = 0; i < parentEle.children.length; i++) {
-    addListener(parentEle.children[i], i);
+    if(parentEle.children[i].hasAttribute('feature')) {
+        addListener(parentEle.children[i], i);  
+    }
 }
