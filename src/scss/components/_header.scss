@@ -110,8 +110,29 @@
             .navSignUpLink {
                 @include defaultBtnStyle;
                 background-color: $accent1;
-                &:focus, &:hover {
-                    background-color: $accent1Dark;
+                position: relative;
+                &::before {
+                    @include gradientAnimation;
+                    content: 'sign up';
+                    opacity: 0;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    border-radius: 2rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    transition: $animationSpeed;
+                }
+                &:hover {
+                    &::before  {
+                        opacity: 1;
+                    }
+                }
+                &:focus {
+                    transform: scale(1.1);
                 }
                 @media only screen and (max-width: 90rem) {
                     display: none;
