@@ -24,10 +24,14 @@
             width: 141.72px;
             transition: transform $animationSpeed;
             &:focus {
-                transform: scale(1.1);
+                img {
+                    transform: scale(1.1);
+                }
             }
             &:hover {
-                transform: scale(1.05);
+                img {
+                    transform: scale(1.1);
+                }
             }
         }
         .navCon {
