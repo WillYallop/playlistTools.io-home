@@ -1,21 +1,30 @@
 .pointsCon {
     width: 100%;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+    display: flex;
     gap: 2rem;
     align-items: center;
     margin-bottom: 2rem;
+    @media only screen and (max-width: 1024px) {
+        flex-wrap: wrap;
+    }
     .col {
+        width: 33.33%;
         background-color: $background;
         border-radius: 2rem;
         box-shadow: $shadow;
         padding: 2rem;
+        @media only screen and (max-width: 1024px) {
+            width: 90%;
+            &:nth-child(2) {
+                margin-left: 10%;
+            }
+        }
         .iconCon {
-            width: 6rem;
+            width: 4rem;
             margin-bottom: 2rem;
             img {
-                width: 6rem;
-                height: 6rem;
+                width: 4rem;
+                height: 4rem;
             }
         }
         h3 {
