@@ -4,11 +4,13 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   entry: {
-    header: './src/js/components/header.js',
+    'header': './src/js/components/header.js',
     // Home
     'tools.home': './src/js/components/home/tools.js',
     'stories.home': './src/js/components/home/stories.js',
-
+    
+    // Playlist Cover Maker
+    'main.coverMaker': './src/js/components/coverMaker/main.js',
   },
   module: {
     rules: [

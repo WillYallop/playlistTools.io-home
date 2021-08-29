@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="./css/main.css"> 
+        <module href="/components/head.html"></module>
+        <title>Cover Maker App | PlaylistTools.io</title>
+    </head> 
+    <body>
+        
+        <!-- Cover maker inject element -->
+        <div id="cm_inject" class="editorBodyContainer">
+            <div id="cm_loadingCon" class="loadingIndCon active">
+                <div class="topHalf">
+                    <div class="spinnerCon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="38.29" height="40"><path d="M37.8 24.8l-3.43-1.98a15.53 15.53 0 000-5.66l3.43-1.98a.97.97 0 00.45-1.13 20.09 20.09 0 00-4.41-7.63.97.97 0 00-1.2-.19l-3.43 1.99a15.22 15.22 0 00-4.9-2.83V1.43a.97.97 0 00-.76-.95 20.27 20.27 0 00-8.8 0 .97.97 0 00-.77.95V5.4a15.7 15.7 0 00-4.9 2.83L5.66 6.24a.96.96 0 00-1.2.19 19.96 19.96 0 00-4.4 7.63.96.96 0 00.44 1.13l3.43 1.98a15.53 15.53 0 000 5.66L.5 24.82a.97.97 0 00-.45 1.12 20.09 20.09 0 004.4 7.63.97.97 0 001.2.19l3.43-1.99a15.22 15.22 0 004.9 2.84v3.96a.97.97 0 00.76.95 20.27 20.27 0 008.8 0 .97.97 0 00.77-.95V34.6a15.7 15.7 0 004.9-2.83l3.43 1.98a.96.96 0 001.2-.18 19.96 19.96 0 004.41-7.63 1 1 0 00-.45-1.13zm-18.66 1.64A6.45 6.45 0 1125.59 20a6.46 6.46 0 01-6.45 6.45z" fill="#fff"/></svg>
+                    </div>
+                </div>
+                <div class="bottomHalf">
+            
+                </div>
+            </div>
+        </div>
+
+        <!-- Load js as components come into view -->
+        <script>
+            const components = [
+                document.getElementById('cm_inject')
+            ];
+            var key = {
+                'cm_inject': {
+                    loaded: false,
+                    path: './components/main.coverMaker.component.js'
+                }
+            }
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    const head = document.getElementsByTagName('head')[0];
+                    if(entry.intersectionRatio > 0) {
+                        // In view
+                        if(!key[entry.target.id].loaded) {
+                            let script = document.createElement('script');
+                            script.setAttribute('src', key[entry.target.id].path);
+                            script.setAttribute('type', 'text/javascript');
+                            script.setAttribute('charset', 'utf-8');
+                            script.setAttribute('type', 'module');
+                            head.insertBefore(script, head.firstChild);
+                        }
+                    }
+                });
+            });
+            components.forEach(comp => {
+                observer.observe(comp);
+            });
+        </script>
+
+    </body>
+</html>

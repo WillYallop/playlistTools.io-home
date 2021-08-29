@@ -1,5 +1,5 @@
 {
-    "input": "src/views/*.html",
+    "input": "src/views/**.html",
     "output": "dist",
     "plugins": {
         "posthtml-modules": {

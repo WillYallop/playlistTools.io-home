@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="./css/main.css">
+        <module href="/components/head.html"></module>
+        <title>Cover Maker | PlaylistTools.io</title>
+    </head>
+    <body>
+        <module href="/components/header.html"></module>
+        
+
+        <!-- Load js as components come into view -->
+        <script>
+            const components = [
+                document.getElementById('pt_headerComp')
+            ];
+            var key = {
+                'pt_headerComp': {
+                    loaded: false,
+                    path: './components/header.component.js'
+                }
+            }
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    const head = document.getElementsByTagName('head')[0];
+                    if(entry.intersectionRatio > 0) {
+                        // In view
+                        if(!key[entry.target.id].loaded) {
+                            let script = document.createElement('script');
+                            script.setAttribute('src', key[entry.target.id].path);
+                            script.setAttribute('type', 'text/javascript');
+                            script.setAttribute('charset', 'utf-8');
+                            head.insertBefore(script, head.firstChild);
+                        }
+                    }
+                });
+            });
+            components.forEach(comp => {
+                observer.observe(comp);
+            });
+        </script>
+
+
+    </body>
+</html>
